@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    {% if projects %}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Release Date</th>
+            <th>Rating</th>
+        </thead>
+        <!-- Example row, replace with Django template tags for dynamic data -->
+        {% for project in projects %}
+        <tr>
+            <td>{{project.name}}</td>
+            <td>{{project.release_date}}</td>
+            <td>{{project.rating}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No projects found</p>
+    {% endif %}
+</body>
+</html>
